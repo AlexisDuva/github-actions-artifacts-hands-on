@@ -13,7 +13,7 @@ jobs:
       run: echo "Hello, world!" > hello.txt
 
     - name: Archive text file
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: hello-artifact
         path: hello.txt
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v8
       with:
         # Artifact name
         name: hello-artifact # optional
