@@ -5,7 +5,6 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -18,3 +17,13 @@ jobs:
       with:
         name: hello-artifact
         path: hello.txt
+        
+  download:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3
+      with:
+        # Artifact name
+        name: hello-artifact # optional
